@@ -1,0 +1,32 @@
+{
+  "name": "lab-l7-frontend",
+  "version": "1.0.0",
+  "description": "Lab L-7: Implementing ToDo List Application with PushDrop",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+        "@bsv/sdk": "^1.5.2",
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
+        "@mui/icons-material": "^5.11.16",
+        "@mui/material": "^5.13.6",
+        "@mui/styled-engine": "^6.4.8",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.3",
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0",
+        "@vitejs/plugin-react": "^4.0.0",
+        "typescript": "^5.0.0",
+        "vite": "^4.0.0"
+  }
+}
