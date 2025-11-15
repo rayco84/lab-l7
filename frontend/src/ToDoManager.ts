@@ -15,8 +15,7 @@ const BASKET_NAME = 'todo tasks'
 
 export async function createTaskToken(
     task: string,
-    amount: number,
-    testWerrLabel = false
+    amount: number
 ) {
     console.log('[createTaskToken] Encrypting task:', task)
 
@@ -33,8 +32,9 @@ export async function createTaskToken(
             [encrypted.ciphertext],
             PROTOCOL_ID,
             KEY_ID,
-            'self',
-            true
+            'self', //  counterparty
+          //  false,  //  forSelf
+          //  true,   //  includeSignature (require sig to unlock)
         )
 
         const result = await walletClient.createAction({
@@ -109,7 +109,7 @@ export async function loadTasks(): Promise<
 
         console.log('[loadTasks] Retrieved outputs:', outputs.length)
 
-        const tasks = await Promise.all(
+        const tasks = await Promise.all(  // extract outputs & parse full tx, account for nulls
             outputs.map(async (entry: any) => {
                 try {
                     const [txid, voutStr] = entry.outpoint.split('.')
